@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TravelRecord.RegisterPage">
+    
+        <StackLayout x:Name="containerStackLayout" Margin="20, 0" VerticalOptions="Center">
+                
+        <Entry x:Name="emailEntry"
+               Text="{Binding Email, Mode=TwoWay}"
+               TextColor="{StaticResource blueColor}"
+               Placeholder="Email Address"
+               Keyboard="Email" />
+        
+        <Entry x:Name="passwordEntry"
+               Text="{Binding Password, Mode=TwoWay}"
+               TextColor="{StaticResource blueColor}"
+               Placeholder="Password"
+               IsPassword="true" />
+        
+        <Entry x:Name="confirmPasswordEntry"
+               Text="{Binding ConfirmPassword, Mode=TwoWay}"
+               TextColor="{StaticResource blueColor}"
+               Placeholder="Confirm password"
+               IsPassword="true" />
+        
+        <Button Text="Register"
+                x:Name="registerButton"
+                Command="{Binding RegisterCommand}"
+                CommandParameter="{Binding User}"
+                TextColor="White"
+                BackgroundColor="DodgerBlue"
+                Margin="0, 50, 0, 0" />
+        
+    </StackLayout>
+    
+</ContentPage>

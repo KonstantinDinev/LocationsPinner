@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TravelRecord" x:Class="TravelRecord.MainPage">
+
+            
+    <StackLayout Margin="20, 0, 20, 0" VerticalOptions="Center">
+
+        <Image x:Name="iconImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               HeightRequest="150"
+               Margin="0, 0, 0, 50" />
+        
+        <Entry
+               TextColor="{StaticResource blueColor}"
+               Text="{Binding Email, Mode=TwoWay}"
+               Placeholder="Email Address"
+               Keyboard="Email" />
+        <!-- abc@abc.bc -->
+        <!-- 12345 -->
+        <Entry 
+               TextColor="{StaticResource blueColor}"
+               Placeholder="Password"
+               Text="{Binding Password, Mode=TwoWay}"
+               IsPassword="true" />
+        <!-- Text Binding not working {Binding Password, Mode=TwoWay} -->
+        
+        <Button Text="Log in"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding User}"
+                TextColor="White"
+                BackgroundColor="DodgerBlue"
+                Margin="0, 50, 0, 0" />
+        
+        <Button Text="Register"
+                x:Name="registerUserButton"
+                Style="{StaticResource transp-button}"
+                HorizontalOptions="End"
+                Command="{Binding RegisterNavigationCommand}" />
+        
+    </StackLayout>
+    
+</ContentPage>
